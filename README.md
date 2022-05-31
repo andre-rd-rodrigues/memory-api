@@ -1,4 +1,4 @@
-# Memory API
+# Memory API 📡
 
 This is an experiment back-end service and API for a memory game.
 
@@ -9,25 +9,23 @@ Heroku: -
 
 This project is composed by:
 
-Flow:
+- Authentication flow
+- User data
 
-- authentication
-- user database
-
-Routes:
+### Routes:
 
 - POST /login
 - POST /register
 
-Middlewares:
+### Middlewares:
 
 - validations
 - authentication
 
-- Database:
+### Database:
 
-  - mongoDB
-  - mongoose
+- mongoDB
+- mongoose
 
 ## Documentation
 
