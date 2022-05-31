@@ -19,6 +19,7 @@ exports.loginValidation = [
  */
 exports.auth = async (req, res, next) => {
   const authorizationHeader = req.get("Authorization");
+
   const { id } = req.params;
   // Get the type of token and actual token
   const bearer = authorizationHeader.split(" ")[0];

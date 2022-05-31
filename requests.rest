@@ -1,5 +1,25 @@
 
-GET  http://localhost:3000/api/user/629624957e9dce686a1dd28f
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI5NjI0OTU3ZTlkY2U2ODZhMWRkMjhmIiwibmFtZSI6IkFuZHJlIFJvZHJpZ3VlcyIsImVtYWlsIjoiYW5kcmVAZ21haWwuY29tIn0sImlhdCI6MTY1NDAwNjk5OSwiZXhwIjoxNjU0MDEwNTk5fQ.rGi0HjiKyGCkjnYw5xmabwo2Ln5mH2Xy743xq_C_gjA
+
+# POST  http://localhost:3000/api/auth/login
+# Content-Type: application/json
+
+# {
+#   "email":"andre@gmail.com",
+#   "password":"password"
+# }
+
+POST  http://localhost:3000/api/user/629624957e9dce686a1dd28f/games/history
+content-Type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI5NjI0OTU3ZTlkY2U2ODZhMWRkMjhmIiwibmFtZSI6IkFuZHJlIFJvZHJpZ3VlcyIsImVtYWlsIjoiYW5kcmVAZ21haWwuY29tIn0sImlhdCI6MTY1NDAyMjI4MiwiZXhwIjoxNjU0MDI1ODgyfQ.t9QRUO6frPggXi3VW8jYrUGhBPQS-A3MpDRXS2SxPAY
+
+{
+  "moves": 20,
+  "date": "22/10/2022",
+  "duration": 104003
+}
+
+
+
+
 
 

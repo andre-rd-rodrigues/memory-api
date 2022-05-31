@@ -16,10 +16,10 @@
     "version": "1.0.1"
   },
   "servers": [
-    { "url": "http://localhost:3000/api", "description": "API local" }
+    { "url": "http://localhost:3000/api/", "description": "API local" }
   ],
   "paths": {
-    "/register": {
+    "auth/register": {
       "post": {
         "summary": "Register a new user",
         "description": "User is registered and added to mongoDB",
@@ -40,7 +40,7 @@
         }
       }
     },
-    "/login": {
+    "auth/login": {
       "post": {
         "summary": "Login user",
         "description": "User login into the platform and gets access to his data",
@@ -63,6 +63,35 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Login"
+              }
+            }
+          }
+        }
+      }
+    },
+    "user/:id/games/history": {
+      "post": {
+        "summary": "Add new game match",
+        "description": "Adds new game match to user's database",
+        "tags": ["User"],
+        "security": [{ "bearerAuth": [] }],
+        "responses": {
+          "200": {
+            "description": "Game match added successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Game_Match"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Game_Match"
               }
             }
           }
@@ -132,13 +161,27 @@
             "type": "string"
           }
         }
-      }
-    },
-    "securitySchemes": {
-      "bearerAuth": {
-        "type": "http",
-        "scheme": "bearer",
-        "bearerFormart": "JWT"
+      },
+      "Game_Match": {
+        "type": "object",
+        "properties": {
+          "moves": {
+            "type": "number"
+          },
+          "date": {
+            "type": "string"
+          },
+          "duration": {
+            "type": "number"
+          }
+        }
+      },
+      "securitySchemes": {
+        "bearerAuth": {
+          "type": "http",
+          "scheme": "bearer",
+          "bearerFormart": "JWT"
+        }
       }
     }
   }

@@ -1,11 +1,11 @@
 const router = require("express").Router();
 
 //Controllers
-const { user } = require("../controllers/user.controller");
+const { add_game_match } = require("../controllers/user.controller");
 
 //Middlewares
 const { auth } = require("../middlewares/auth");
 
-router.get("/:id", auth, user);
+router.post("/:id/games/history", auth, add_game_match);
 
 module.exports = router;

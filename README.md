@@ -29,7 +29,7 @@ This project is composed by:
 
 ## Documentation
 
-Swagger - http://localhost:3000/api-docs
+Swagger - http://localhost:3000/api-docs (for now, only local)
 
 ### Hosting
 
