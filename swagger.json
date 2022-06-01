@@ -69,12 +69,19 @@
         }
       }
     },
-    "user/:id/games/history": {
+    "user/{id}/games/history": {
       "post": {
         "summary": "Add new game match",
         "description": "Adds new game match to user's database",
         "tags": ["User"],
         "security": [{ "bearerAuth": [] }],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "parameter",
+            "description": "user id"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Game match added successfully",

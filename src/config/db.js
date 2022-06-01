@@ -2,10 +2,10 @@ const mongoose = require("mongoose");
 
 const connectToMongoDB = async () => {
   try {
-    mongoose.connect(
-      "mongodb+srv://andreRodrigues92:passaros@cluster0.uuwic.mongodb.net/?retryWrites=true&w=majority",
-      { useNewUrlParser: true, useUnifiedTopology: true }
-    );
+    mongoose.connect(process.env.MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    });
     mongoose.set("useCreateIndex", true);
     console.log("Connected to MongoDB...");
   } catch (error) {
